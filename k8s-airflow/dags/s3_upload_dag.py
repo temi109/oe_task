@@ -17,7 +17,7 @@ default_args = {
 S3_bucket_name = "oe-task-bucket"
 
 case_study_db = 'case_study.db'
-conn = sqlite3.connect(case_study_db )
+conn = sqlite3.connect(case_study_db)
 c = conn.cursor()
 
 ## Load data in to dfs
