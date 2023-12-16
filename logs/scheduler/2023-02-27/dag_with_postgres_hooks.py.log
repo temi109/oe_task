@@ -1,0 +1,32 @@
+[2023-02-27T23:58:07.091+0000] {processor.py:153} INFO - Started process (PID=4172) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:58:07.091+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2023-02-27T23:58:07.091+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.091+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:58:07.469+0000] {processor.py:753} INFO - DAG(s) dict_keys(['dag_with_postgres_hooks_v04']) retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:58:07.582+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.582+0000] {manager.py:504} INFO - Created Permission View: can delete on DAG:dag_with_postgres_hooks_v04
+[2023-02-27T23:58:07.589+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.589+0000] {manager.py:504} INFO - Created Permission View: can read on DAG:dag_with_postgres_hooks_v04
+[2023-02-27T23:58:07.595+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.595+0000] {manager.py:504} INFO - Created Permission View: can edit on DAG:dag_with_postgres_hooks_v04
+[2023-02-27T23:58:07.595+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.595+0000] {dag.py:2690} INFO - Sync 1 DAGs
+[2023-02-27T23:58:07.607+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.607+0000] {dag.py:2711} INFO - Creating ORM DAG for dag_with_postgres_hooks_v04
+[2023-02-27T23:58:07.618+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:07.618+0000] {dag.py:3441} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-02-26T00:00:00+00:00, run_after=2023-02-27T00:00:00+00:00
+[2023-02-27T23:58:07.630+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.541 seconds
+[2023-02-27T23:58:38.218+0000] {processor.py:153} INFO - Started process (PID=4214) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:58:38.218+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2023-02-27T23:58:38.219+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:38.218+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:58:38.301+0000] {processor.py:753} INFO - DAG(s) dict_keys(['dag_with_postgres_hooks_v04']) retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:58:38.315+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:38.315+0000] {dag.py:2690} INFO - Sync 1 DAGs
+[2023-02-27T23:58:38.334+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:58:38.334+0000] {dag.py:3441} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-02-26T00:00:00+00:00, run_after=2023-02-27T00:00:00+00:00
+[2023-02-27T23:58:38.347+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.131 seconds
+[2023-02-27T23:59:08.474+0000] {processor.py:153} INFO - Started process (PID=4276) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:59:08.475+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2023-02-27T23:59:08.475+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:59:08.475+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:59:08.573+0000] {processor.py:753} INFO - DAG(s) dict_keys(['dag_with_postgres_hooks_v04']) retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:59:08.674+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:59:08.673+0000] {dag.py:2690} INFO - Sync 1 DAGs
+[2023-02-27T23:59:08.695+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:59:08.695+0000] {dag.py:3441} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-02-26T00:00:00+00:00, run_after=2023-02-27T00:00:00+00:00
+[2023-02-27T23:59:08.709+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.237 seconds
+[2023-02-27T23:59:39.605+0000] {processor.py:153} INFO - Started process (PID=4318) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:59:39.607+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2023-02-27T23:59:39.607+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:59:39.607+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:59:39.718+0000] {processor.py:753} INFO - DAG(s) dict_keys(['dag_with_postgres_hooks_v04']) retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2023-02-27T23:59:39.733+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:59:39.733+0000] {dag.py:2690} INFO - Sync 1 DAGs
+[2023-02-27T23:59:39.753+0000] {logging_mixin.py:137} INFO - [2023-02-27T23:59:39.753+0000] {dag.py:3441} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-02-26T00:00:00+00:00, run_after=2023-02-27T00:00:00+00:00
+[2023-02-27T23:59:39.767+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.164 seconds

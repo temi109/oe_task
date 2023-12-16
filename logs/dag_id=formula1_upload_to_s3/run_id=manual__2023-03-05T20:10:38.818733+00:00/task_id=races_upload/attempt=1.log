@@ -1,0 +1,60 @@
+[2023-03-05T20:10:40.148+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: formula1_upload_to_s3.races_upload manual__2023-03-05T20:10:38.818733+00:00 [queued]>
+[2023-03-05T20:10:40.157+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: formula1_upload_to_s3.races_upload manual__2023-03-05T20:10:38.818733+00:00 [queued]>
+[2023-03-05T20:10:40.157+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-05T20:10:40.157+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 6
+[2023-03-05T20:10:40.157+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-05T20:10:40.169+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): races_upload> on 2023-03-05 20:10:38.818733+00:00
+[2023-03-05T20:10:40.173+0000] {standard_task_runner.py:55} INFO - Started process 10908 to run task
+[2023-03-05T20:10:40.176+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'formula1_upload_to_s3', 'races_upload', 'manual__2023-03-05T20:10:38.818733+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/s3_upload_dag.py', '--cfg-path', '/tmp/tmpggn2yhyj']
+[2023-03-05T20:10:40.177+0000] {standard_task_runner.py:83} INFO - Job 14: Subtask races_upload
+[2023-03-05T20:10:40.239+0000] {task_command.py:388} INFO - Running <TaskInstance: formula1_upload_to_s3.races_upload manual__2023-03-05T20:10:38.818733+00:00 [running]> on host a4cedc34403c
+[2023-03-05T20:10:40.313+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=tem109
+AIRFLOW_CTX_DAG_ID=formula1_upload_to_s3
+AIRFLOW_CTX_TASK_ID=races_upload
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-05T20:10:38.818733+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-05T20:10:38.818733+00:00
+[2023-03-05T20:10:40.323+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-03-05T20:10:40.376+0000] {s3_upload_dag.py:81} INFO - Saved races data
+[2023-03-05T20:10:40.384+0000] {base.py:73} INFO - Using connection ID 's3_conn' for task execution.
+[2023-03-05T20:10:40.385+0000] {connection_wrapper.py:334} INFO - AWS Connection (conn_id='s3_conn', conn_type='aws') credentials retrieved from login and password.
+[2023-03-05T20:10:41.228+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/s3_upload_dag.py", line 88, in races_upload
+    replace = True     ## Replace file if already exists
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 99, in wrapper
+    return func(*bound_args.args, **bound_args.kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 70, in wrapper
+    return func(*bound_args.args, **bound_args.kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 646, in load_file
+    client.upload_file(filename, bucket_name, key, ExtraArgs=extra_args, Config=self.transfer_config)
+  File "/home/airflow/.local/lib/python3.7/site-packages/boto3/s3/inject.py", line 148, in upload_file
+    callback=Callback,
+  File "/home/airflow/.local/lib/python3.7/site-packages/boto3/s3/transfer.py", line 292, in upload_file
+    future.result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/s3transfer/futures.py", line 266, in result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/s3transfer/tasks.py", line 269, in _main
+    self._submit(transfer_future=transfer_future, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/s3transfer/upload.py", line 585, in _submit
+    upload_input_manager.provide_transfer_size(transfer_future)
+  File "/home/airflow/.local/lib/python3.7/site-packages/s3transfer/upload.py", line 244, in provide_transfer_size
+    self._osutil.get_file_size(transfer_future.meta.call_args.fileobj)
+  File "/home/airflow/.local/lib/python3.7/site-packages/s3transfer/utils.py", line 247, in get_file_size
+    return os.path.getsize(filename)
+  File "/usr/local/lib/python3.7/genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [Errno 2] No such file or directory: 'dags/get_races.csv'
+[2023-03-05T20:10:41.236+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=formula1_upload_to_s3, task_id=races_upload, execution_date=20230305T201038, start_date=20230305T201040, end_date=20230305T201041
+[2023-03-05T20:10:41.248+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 14 for task races_upload ([Errno 2] No such file or directory: 'dags/get_races.csv'; 10908)
+[2023-03-05T20:10:41.270+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-05T20:10:41.285+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

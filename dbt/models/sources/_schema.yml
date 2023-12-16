@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: FORMULA_1_SOURCE
+    description: 'Source formula1 data'
+    database: ANALYTICS
+    schema: PUBLIC
+    tables:
+      - name: races
+        description: 'source formula1 rave data'
+      - name: circuits
+      - name: constructors
+      - name: results

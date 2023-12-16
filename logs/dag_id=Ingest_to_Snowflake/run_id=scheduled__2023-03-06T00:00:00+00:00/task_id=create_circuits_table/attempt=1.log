@@ -1,0 +1,56 @@
+[2023-03-07T16:08:45.628+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Ingest_to_Snowflake.create_circuits_table scheduled__2023-03-06T00:00:00+00:00 [queued]>
+[2023-03-07T16:08:45.635+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Ingest_to_Snowflake.create_circuits_table scheduled__2023-03-06T00:00:00+00:00 [queued]>
+[2023-03-07T16:08:45.635+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-07T16:08:45.635+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 6
+[2023-03-07T16:08:45.635+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-07T16:08:45.647+0000] {taskinstance.py:1300} INFO - Executing <Task(SnowflakeOperator): create_circuits_table> on 2023-03-06 00:00:00+00:00
+[2023-03-07T16:08:45.652+0000] {standard_task_runner.py:55} INFO - Started process 687 to run task
+[2023-03-07T16:08:45.654+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Ingest_to_Snowflake', 'create_circuits_table', 'scheduled__2023-03-06T00:00:00+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/s3_to_snowflake.py', '--cfg-path', '/tmp/tmp01kj2ggo']
+[2023-03-07T16:08:45.656+0000] {standard_task_runner.py:83} INFO - Job 66: Subtask create_circuits_table
+[2023-03-07T16:08:45.702+0000] {task_command.py:388} INFO - Running <TaskInstance: Ingest_to_Snowflake.create_circuits_table scheduled__2023-03-06T00:00:00+00:00 [running]> on host 232e4328c649
+[2023-03-07T16:08:45.893+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Ingest_to_Snowflake
+AIRFLOW_CTX_TASK_ID=create_circuits_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-03-06T00:00:00+00:00
+[2023-03-07T16:08:45.894+0000] {sql.py:254} INFO - Executing: ['sql/sql_statements.sql.create_circuits_table', 'sql/sql_statements.sql.start_warehouse']
+[2023-03-07T16:08:45.900+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-03-07T16:08:46.093+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-03-07T16:08:46.094+0000] {connection.py:287} INFO - Snowflake Connector for Python Version: 3.0.1, Python Version: 3.7.16, Platform: Linux-5.15.79.1-microsoft-standard-WSL2-x86_64-with-debian-11.6
+[2023-03-07T16:08:46.095+0000] {connection.py:990} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-03-07T16:08:46.095+0000] {connection.py:1007} INFO - Setting use_openssl_only mode to False
+[2023-03-07T16:08:46.671+0000] {cursor.py:738} INFO - query: [ALTER SESSION SET autocommit=False]
+[2023-03-07T16:08:46.746+0000] {cursor.py:751} INFO - query execution done
+[2023-03-07T16:08:46.746+0000] {cursor.py:891} INFO - Number of results in first chunk: 1
+[2023-03-07T16:08:46.746+0000] {sql.py:375} INFO - Running statement: sql/sql_statements.sql.create_circuits_table, parameters: None
+[2023-03-07T16:08:46.746+0000] {cursor.py:738} INFO - query: [sql/sql_statements.sql.create_circuits_table]
+[2023-03-07T16:08:46.857+0000] {cursor.py:751} INFO - query execution done
+[2023-03-07T16:08:46.870+0000] {connection.py:586} INFO - closed
+[2023-03-07T16:08:46.892+0000] {connection.py:589} INFO - No async queries seem to be running, deleting session
+[2023-03-07T16:08:46.948+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 266, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 379, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/cursor.py", line 839, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/errors.py", line 294, in errorhandler_wrapper
+    error_value,
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/errors.py", line 345, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/errors.py", line 231, in default_errorhandler
+    cursor=cursor,
+snowflake.connector.errors.ProgrammingError: 001003 (42000): 01aaca28-0000-0ab5-0000-1e090001303e: SQL compilation error:
+syntax error line 1 at position 0 unexpected 'sql'.
+[2023-03-07T16:08:46.955+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=Ingest_to_Snowflake, task_id=create_circuits_table, execution_date=20230306T000000, start_date=20230307T160845, end_date=20230307T160846
+[2023-03-07T16:08:46.967+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 66 for task create_circuits_table (001003 (42000): 01aaca28-0000-0ab5-0000-1e090001303e: SQL compilation error:
+syntax error line 1 at position 0 unexpected 'sql'.; 687)
+[2023-03-07T16:08:46.989+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-07T16:08:47.011+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

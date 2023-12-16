@@ -1,0 +1,12 @@
+executor: "KubernetesExecutor"
+
+defaultAirflowRepository: "airflow-custom"
+
+defaultAirflowTag: "2.5.1"
+
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/temi109/formula1_elt.git
+    branch: main
+    subPath: "k8s-airflow/dags"

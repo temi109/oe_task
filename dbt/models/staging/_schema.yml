@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_formula_1__circuits
+    columns:
+      - name: circuitid
+        tests:
+          - unique
+          - not_null
+
+  
+  - name: stg_formula_1__races
+    columns:
+      - name: raceid
+        tests:
+          - unique
+          - not_null
+      

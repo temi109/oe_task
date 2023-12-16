@@ -1,0 +1,64 @@
+[2023-03-07T18:26:15.686+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Ingest_to_Snowflake.create_circuits_table manual__2023-03-07T18:26:14.609027+00:00 [queued]>
+[2023-03-07T18:26:15.805+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Ingest_to_Snowflake.create_circuits_table manual__2023-03-07T18:26:14.609027+00:00 [queued]>
+[2023-03-07T18:26:15.805+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-07T18:26:15.805+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 6
+[2023-03-07T18:26:15.805+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-07T18:26:15.817+0000] {taskinstance.py:1300} INFO - Executing <Task(SnowflakeOperator): create_circuits_table> on 2023-03-07 18:26:14.609027+00:00
+[2023-03-07T18:26:15.823+0000] {standard_task_runner.py:55} INFO - Started process 9651 to run task
+[2023-03-07T18:26:15.825+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Ingest_to_Snowflake', 'create_circuits_table', 'manual__2023-03-07T18:26:14.609027+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/copy_into_snowflake.py', '--cfg-path', '/tmp/tmpv3vie_hd']
+[2023-03-07T18:26:15.826+0000] {standard_task_runner.py:83} INFO - Job 129: Subtask create_circuits_table
+[2023-03-07T18:26:15.868+0000] {task_command.py:388} INFO - Running <TaskInstance: Ingest_to_Snowflake.create_circuits_table manual__2023-03-07T18:26:14.609027+00:00 [running]> on host d7fd3210ba1e
+[2023-03-07T18:26:15.919+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Ingest_to_Snowflake
+AIRFLOW_CTX_TASK_ID=create_circuits_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-07T18:26:14.609027+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-07T18:26:14.609027+00:00
+[2023-03-07T18:26:15.920+0000] {sql.py:254} INFO - Executing: ['\n    CREATE OR REPLACE TRANSIENT TABLE circuits\n        (\n            circuitId VARCHAR,\n            circuitRef VARCHAR,\n            name VARCHAR,\n            location VARCHAR,\n            country VARCHAR,\n            lat int,\n            lng int,\n            alt int,\n            url VARCHAR\n        );', '\n    CREATE OR REPLACE WAREHOUSE my_wh WAREHOUSE_SIZE=XSMALL INITIALLY_SUSPENDED=FALSE\n    AUTO_SUSPEND = 300;']
+[2023-03-07T18:26:15.925+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-03-07T18:26:16.100+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-03-07T18:26:16.101+0000] {connection.py:287} INFO - Snowflake Connector for Python Version: 3.0.1, Python Version: 3.7.16, Platform: Linux-5.15.79.1-microsoft-standard-WSL2-x86_64-with-debian-11.6
+[2023-03-07T18:26:16.101+0000] {connection.py:990} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-03-07T18:26:16.102+0000] {connection.py:1007} INFO - Setting use_openssl_only mode to False
+[2023-03-07T18:26:16.720+0000] {cursor.py:738} INFO - query: [ALTER SESSION SET autocommit=False]
+[2023-03-07T18:26:16.795+0000] {cursor.py:751} INFO - query execution done
+[2023-03-07T18:26:16.795+0000] {cursor.py:891} INFO - Number of results in first chunk: 1
+[2023-03-07T18:26:16.795+0000] {sql.py:375} INFO - Running statement: 
+    CREATE OR REPLACE TRANSIENT TABLE circuits
+        (
+            circuitId VARCHAR,
+            circuitRef VARCHAR,
+            name VARCHAR,
+            location VARCHAR,
+            country VARCHAR,
+            lat int,
+            lng int,
+            alt int,
+            url VARCHAR
+        );, parameters: None
+[2023-03-07T18:26:16.795+0000] {cursor.py:738} INFO - query: [CREATE OR REPLACE TRANSIENT TABLE circuits ( circuitId VARCHAR, circuitRef VARCH...]
+[2023-03-07T18:26:16.967+0000] {cursor.py:751} INFO - query execution done
+[2023-03-07T18:26:16.968+0000] {cursor.py:891} INFO - Number of results in first chunk: 1
+[2023-03-07T18:26:16.968+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-03-07T18:26:16.968+0000] {snowflake.py:391} INFO - Rows affected: 1
+[2023-03-07T18:26:16.968+0000] {snowflake.py:392} INFO - Snowflake query id: 01aacab2-0000-0ab5-0000-1e090001311e
+[2023-03-07T18:26:16.968+0000] {sql.py:375} INFO - Running statement: 
+    CREATE OR REPLACE WAREHOUSE my_wh WAREHOUSE_SIZE=XSMALL INITIALLY_SUSPENDED=FALSE
+    AUTO_SUSPEND = 300;, parameters: None
+[2023-03-07T18:26:16.968+0000] {cursor.py:738} INFO - query: [CREATE OR REPLACE WAREHOUSE my_wh WAREHOUSE_SIZE=XSMALL INITIALLY_SUSPENDED=FALS...]
+[2023-03-07T18:26:17.117+0000] {cursor.py:751} INFO - query execution done
+[2023-03-07T18:26:17.117+0000] {cursor.py:891} INFO - Number of results in first chunk: 1
+[2023-03-07T18:26:17.117+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-03-07T18:26:17.117+0000] {snowflake.py:391} INFO - Rows affected: 1
+[2023-03-07T18:26:17.117+0000] {snowflake.py:392} INFO - Snowflake query id: 01aacab2-0000-0ab5-0000-1e0900013122
+[2023-03-07T18:26:17.117+0000] {cursor.py:738} INFO - query: [COMMIT]
+[2023-03-07T18:26:17.187+0000] {cursor.py:751} INFO - query execution done
+[2023-03-07T18:26:17.187+0000] {cursor.py:891} INFO - Number of results in first chunk: 1
+[2023-03-07T18:26:17.187+0000] {connection.py:586} INFO - closed
+[2023-03-07T18:26:17.229+0000] {connection.py:589} INFO - No async queries seem to be running, deleting session
+[2023-03-07T18:26:17.298+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=Ingest_to_Snowflake, task_id=create_circuits_table, execution_date=20230307T182614, start_date=20230307T182615, end_date=20230307T182617
+[2023-03-07T18:26:17.320+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-07T18:26:17.345+0000] {taskinstance.py:2578} INFO - 4 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,27 @@
+[2023-03-05T20:12:54.810+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: formula1_upload_to_s3.results_upload scheduled__2023-03-04T00:00:00+00:00 [queued]>
+[2023-03-05T20:12:54.824+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: formula1_upload_to_s3.results_upload scheduled__2023-03-04T00:00:00+00:00 [queued]>
+[2023-03-05T20:12:54.824+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-05T20:12:54.824+0000] {taskinstance.py:1280} INFO - Starting attempt 2 of 6
+[2023-03-05T20:12:54.824+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-05T20:12:54.850+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): results_upload> on 2023-03-04 00:00:00+00:00
+[2023-03-05T20:12:54.856+0000] {standard_task_runner.py:55} INFO - Started process 11174 to run task
+[2023-03-05T20:12:54.858+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'formula1_upload_to_s3', 'results_upload', 'scheduled__2023-03-04T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/s3_upload_dag.py', '--cfg-path', '/tmp/tmp17sox1bo']
+[2023-03-05T20:12:54.858+0000] {standard_task_runner.py:83} INFO - Job 24: Subtask results_upload
+[2023-03-05T20:12:54.934+0000] {task_command.py:388} INFO - Running <TaskInstance: formula1_upload_to_s3.results_upload scheduled__2023-03-04T00:00:00+00:00 [running]> on host a4cedc34403c
+[2023-03-05T20:12:55.048+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=tem109
+AIRFLOW_CTX_DAG_ID=formula1_upload_to_s3
+AIRFLOW_CTX_TASK_ID=results_upload
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-04T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-03-04T00:00:00+00:00
+[2023-03-05T20:12:55.057+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-03-05T20:12:55.319+0000] {s3_upload_dag.py:104} INFO - Saved results data
+[2023-03-05T20:12:55.332+0000] {base.py:73} INFO - Using connection ID 's3_conn' for task execution.
+[2023-03-05T20:12:55.333+0000] {connection_wrapper.py:334} INFO - AWS Connection (conn_id='s3_conn', conn_type='aws') credentials retrieved from login and password.
+[2023-03-05T20:12:56.061+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-03-05T20:12:56.069+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=formula1_upload_to_s3, task_id=results_upload, execution_date=20230304T000000, start_date=20230305T201254, end_date=20230305T201256
+[2023-03-05T20:12:56.120+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-05T20:12:56.136+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
